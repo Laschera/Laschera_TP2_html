@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Pantalla principal -->
+  <div id="pantalla-inicial" class="container">
+    <h1 class="titulo">Bienvenido a mi Portfolio</h1>
+    <div class="menu-vertical">
+      <a href="#" onclick="mostrarSeccion('sobre-mi')">Sobre mí</a>
+      <a href="#" onclick="mostrarSeccion('trabajos')">Trabajos</a>
+      <a href="https://www.instagram.com/Lasche_fd" target="_blank">Instagram</a>
+    </div>
+  </div>
+
+  <!-- Sección: Sobre mí -->
+  <section id="sobre-mi" class="seccion oculto">
+    <h2>Sobre mí</h2>
+
+    <div class="acordeon">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">Programación</button>
+      <div class="acordeon-content">
+        <p>Soy una persona a la que le encanta aprender cosas nuevas. Actualmente tengo conocimientos de Python, C++, HTML y CSS (aunque en esto último estoy empezando). Siempre estoy abierto a seguir aprendiendo y creciendo.</p>
+      </div>
+
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">Ensamblaje</button>
+      <div class="acordeon-content">
+        <p>Poseo conocimientos en hardware para reparar computadoras, cambiar sus componentes y también para construir un PC desde cero con los componentes adecuados.</p>
+      </div>
+
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">Más información</button>
+      <div class="acordeon-content">
+        <p>Me llamo Facundo Daniel Laschera, tengo 16 años, estudie en el Colegio del Libertador en mi primaria y actualmente soy un estudiante del Instituto Industrial Luis A. Huergo.</p>
+      </div>
+    </div>
+
+    <a href="#" class="inicio" onclick="volverInicio()">Inicio</a>
+  </section>
+
+  <!-- Sección: Trabajos -->
+  <section id="trabajos" class="seccion oculto">
+    <h2>Trabajos</h2>
+    <ul>
+      <li>
+        <p>Se trata de un videojuego desarrollado en python que simula el tradicional space invaders</p>
+        <a href="https://github.com/Laschera/TP1_SpaceInvaders" target="_blank">Space Invaders</a>
+      </li>
+      <!-- Acá voy a ir agregando futuros proyectos -->
+    </ul>
+    <a href="#" class="inicio" onclick="volverInicio()">Inicio</a>
+  </section>
+
+  <script>
+    function mostrarSeccion(id) {
+      document.getElementById('pantalla-inicial').style.display = 'none';
+      document.querySelectorAll('.seccion').forEach(seccion => {
+        seccion.classList.add('oculto');
+      });
+      document.getElementById(id).classList.remove('oculto');
+    }
+
+    function volverInicio() {
+      document.getElementById('pantalla-inicial').style.display = 'block';
+      document.querySelectorAll('.seccion').forEach(seccion => {
+        seccion.classList.add('oculto');
+      });
+    }
+
+    function toggleAcordeon(button) {
+      const content = button.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
