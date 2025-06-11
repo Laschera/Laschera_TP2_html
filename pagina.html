@@ -23,12 +23,12 @@
     <div class="acordeon">
       <button class="acordeon-btn" onclick="toggleAcordeon(this)">Programación</button>
       <div class="acordeon-content">
-        <p>Soy una persona a la que le encanta aprender cosas nuevas. Actualmente tengo conocimientos de Python, C++, HTML y CSS (aunque en esto último estoy empezando). Siempre estoy abierto a seguir aprendiendo y creciendo.</p>
+        <p>Soy una persona a la que le encanta aprender cosas nuevas. Actualmente tengo conocimientos de Python, C++, HTML, CSS (aunque en esto último estoy empezando), QB64 y actualmente también me estoy formando en sql. Siempre estoy abierto a seguir aprendiendo y creciendo.</p>
       </div>
 
       <button class="acordeon-btn" onclick="toggleAcordeon(this)">Otras hablidades</button>
       <div class="acordeon-content">
-      <p>Poseo conocimientos en hardware para reparar computadoras, cambiar sus componentes e incluso para construir un PC desde cero con los componentes adecuados. Adicionalmente, dispongo de formación en Photoshop.  </p>
+      <p>Poseo conocimientos en hardware para reparar computadoras, cambiar sus componentes e incluso para construir un PC desde cero con los componentes adecuados. Adicionalmente, dispongo de formación en Photoshop y estoy realizando un curso de cisco para mejorar aún más mis conocimientos.  </p>
       </div>
 
       <button class="acordeon-btn" onclick="toggleAcordeon(this)">Más información</button>
@@ -40,18 +40,44 @@
     <a href="#" class="inicio" onclick="volverInicio()">Inicio</a>
   </section>
 
-  <!-- Sección: Trabajos -->
-  <section id="trabajos" class="seccion oculto">
-    <h2>Trabajos</h2>
-    <ul>
-      <li>
-        <p>Se trata de un videojuego desarrollado en python que simula el tradicional space invaders</p>
-        <a href="https://github.com/Laschera/TP1_SpaceInvaders" target="_blank">Space Invaders</a>
-      </li>
-      <!-- Acá voy a ir agregando futuros proyectos -->
-    </ul>
-    <a href="#" class="inicio" onclick="volverInicio()">Inicio</a>
-  </section>
+ <!-- Sección: Trabajos -->
+<section id="trabajos" class="seccion oculto">
+  <h2>Trabajos</h2>
+  <ul>
+    <li>
+      <p>Se trata de un videojuego desarrollado en python que simula el tradicional space invaders</p>
+      <a href="https://github.com/Laschera/TP1_SpaceInvaders" target="_blank">
+        <img src="img/space_invaders.png" alt="Space Invaders" style="width: 200px; border-radius: 10px;">
+      </a>
+    </li>
+
+    <li>
+      <p>Trabajos hechos con Photoshop</p>
+      <a href="#" class="boton" onclick="mostrarSeccion('trabajos-photoshop')">Ver galería</a>  
+    </li>
+  </ul>
+  <a href="#" class="inicio" onclick="volverInicio()">Inicio</a>
+</section>
+
+<!-- Sección: Trabajos Photoshop -->
+<section id="trabajos-photoshop" class="seccion oculto">
+  <h2>Trabajos en Photoshop</h2>
+  <div class="galeria">
+    <img src="img/ps1.png" alt="Proyecto 1 de Photoshop" onclick="verImagen('img/ps1.png')">
+    <img src="img/ps2.png" alt="Proyecto 2 de Photoshop" onclick="verImagen('img/ps2.png')">
+    <img src="img/ps3.png" alt="Proyecto 3 de Photoshop" onclick="verImagen('img/ps3.png')">
+  </div>
+  <a href="#" class="inicio" onclick="volverInicio()">Inicio</a>
+</section>
+
+<section id="imagen-ampliada" class="seccion oculto">
+  <h2>Vista ampliada</h2>
+  <div class="imagen-grande">
+    <img id="imagen-grande-src" src="" alt="Imagen ampliada">
+  </div>
+  <a href="#" class="inicio" onclick="mostrarSeccion('trabajos-photoshop')">Volver a galería</a>
+</section>
+
 
   <script>
     function mostrarSeccion(id) {
@@ -73,6 +99,12 @@
       const content = button.nextElementSibling;
       content.style.display = content.style.display === "block" ? "none" : "block";
     }
+
+    function verImagen(ruta) {
+      document.getElementById('imagen-grande-src').src = ruta;
+      mostrarSeccion('imagen-ampliada');
+    }
+
   </script>
 </body>
 </html>

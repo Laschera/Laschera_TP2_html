@@ -108,7 +108,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* Estilo para enlaces */
+/* Estilo para enlaces generales */
 a {
   color: black;
   text-decoration: none;
@@ -118,4 +118,52 @@ a {
 a:hover {
   color: blue;
   text-decoration: underline;
+}
+
+/* Galería de imágenes */
+.galeria {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.galeria img {
+  width: 250px;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+  border-color: blue;
+}
+
+/* Imagen ampliada */
+.imagen-grande {
+  text-align: center;
+  padding: 40px;
+}
+
+.imagen-grande img {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* === ESTILOS AÑADIDOS PARA CENTRAR Y LIMPIAR LOS TRABAJOS === */
+#trabajos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#trabajos li {
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  text-align: center;
 }
