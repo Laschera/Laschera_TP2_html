@@ -109,6 +109,11 @@ body {
 }
 
 /* Estilo para enlaces generales */
+
+#volver-proyectos {
+  display: none;
+}
+
 a {
   color: black;
   text-decoration: none;
@@ -166,4 +171,69 @@ a:hover {
   max-width: 600px;
   margin: 0 auto 30px auto;
   text-align: center;
+}
+
+#trabajos li a {
+  text-decoration: underline;
+  color: var(--text-color);
+}
+
+#trabajos li a:active {
+  color: #3498db; 
+  
+}
+
+#trabajos li a:hover {
+  color: #5dade2;
+}
+
+/* Header */
+#main-header {
+  background-color: var(--fondo-secundario);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#main-header nav button {
+  margin: 0 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--boton);
+  color: var(--texto);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#main-header nav button:hover {
+  background-color: var(--boton-hover);
+}
+
+/* Modo claro (por defecto) */
+:root {
+  --fondo-principal: #ffffff;
+  --fondo-secundario: #f0f0f0;
+  --texto: #222222;
+  --boton: #dddddd;
+  --boton-hover: #cccccc;
+}
+
+/* Modo oscuro */
+body.oscuro {
+  --fondo-principal: #1e1e1e;
+  --fondo-secundario: #2c2c2c;
+  --texto: #ffffff;
+  --boton: #444444;
+  --boton-hover: #555555;
+}
+
+body {
+  background-color: var(--fondo-principal);
+  color: var(--texto);
+  transition: background-color 0.3s, color 0.3s;
 }
