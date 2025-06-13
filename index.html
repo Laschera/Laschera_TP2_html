@@ -8,9 +8,21 @@
 <body>
 
   <header id="main-header">
+    <div class="color-selector">
+      <button id="btn-colores">Colores 🎨</button>
+      <div id="color-panel" class="oculto">
+        <span class="color-opcion" data-color="#e91e63" style="background-color: #e91e63;"></span> <!-- Rosa -->
+        <span class="color-opcion" data-color="#4caf50" style="background-color: #4caf50;"></span> <!-- Verde -->
+        <span class="color-opcion" data-color="#f44336" style="background-color: #f44336;"></span> <!-- Rojo -->
+        <span class="color-opcion" data-color="#ff9800" style="background-color: #ff9800;"></span> <!-- Naranja -->
+        <span class="color-opcion" data-color="#ffeb3b" style="background-color: #ffeb3b;"></span> <!-- Amarillo -->
+        <span class="color-opcion" data-color="#9c27b0" style="background-color: #9c27b0;"></span> <!-- Violeta -->
+      </div>
+    </div>
     <nav>
       <button onclick="volverInicio()">Inicio</button>
-      <button id="volver-proyectos" onclick="mostrarSeccion('trabajos-photoshop')">Proyectos</button>
+      <button id="volver-trabajos" onclick="mostrarSeccion('trabajos')">Volver a trabajos</button>
+
       <button onclick="toggleModo()">🌙</button>
     </nav>
   </header>
@@ -21,7 +33,7 @@
     <div class="menu-vertical">
       <a href="#" onclick="mostrarSeccion('sobre-mi')">Sobre mí</a>
       <a href="#" onclick="mostrarSeccion('trabajos')">Trabajos</a>
-      <a href="https://www.instagram.com/Lasche_fd" target="_blank">Instagram</a>
+      <a href="#" onclick="mostrarSeccion('contacto')">Contacto</a>
     </div>
   </div>
 
@@ -32,7 +44,7 @@
     <div class="acordeon">
       <button class="acordeon-btn" onclick="toggleAcordeon(this)">Programación</button>
       <div class="acordeon-content">
-        <p>Soy una persona a la que le encanta aprender cosas nuevas. Actualmente tengo conocimientos de Python, C++, HTML, CSS (aunque en esto último estoy empezando), QB64 y actualmente también me estoy formando en sql. Siempre estoy abierto a seguir aprendiendo y creciendo.</p>
+        <p>Soy una persona a la que le encanta aprender cosas nuevas. Actualmente tengo conocimientos de Python, C++, HTML, CSS (aunque en esto último estoy empezando), QB64 y actualmente también me estoy formando en sql y JavaScript. Siempre estoy abierto a seguir aprendiendo y creciendo.</p>
       </div>
 
       <button class="acordeon-btn" onclick="toggleAcordeon(this)">Otras hablidades</button>
@@ -83,6 +95,37 @@
     </div>
     <a href="#" class="inicio" onclick="mostrarSeccion('trabajos-photoshop')">Volver a galería</a>
   </section>
+
+  <!-- Sección: Contacto -->
+  <section id="contacto" class="seccion oculto">
+    <div class="contacto-container">
+      <div class="contacto-izquierda">
+        <div class="contacto-rectangulo">
+          <h2>Contacto</h2>
+          <img src="img/yo.jpg" alt="Foto de Facundo" />
+        </div>
+      </div>
+      <div class="contacto-derecha">
+        <p>
+          Estudio: Colegio Industrial Luis A. Huergo<br>
+          <a href="https://www.google.com/maps/place/Per%C3%BA+759,+C1078+AAO,+Cdad.+Aut%C3%B3noma+de+Buenos+Aires" target="_blank">
+            Perú 759, CABA
+          </a>
+        </p>
+  
+
+        <p style="margin-top: 30px;">
+          <strong>Correo institucional:</strong> <br> <a href="mailto:flaschera@alumno.huergo.edu.ar">flaschera@alumno.huergo.edu.ar</a><br>
+          <strong>Correo personal:</strong> <br> <a href="mailto:fdlaschera@gmail.com">fdlaschera@gmail.com</a>
+        </p>
+
+        <p style="margin-top: 30px;">
+          <strong>Instagram:</strong> <a href="https://www.instagram.com/Lasche_fd" target="_blank">@Lasche_fd</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
 
   <!-- Enlace al JavaScript externo -->
   <script src="script.js"></script>
