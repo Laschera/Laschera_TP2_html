@@ -5,6 +5,10 @@ function mostrarSeccion(id) {
   });
   document.getElementById(id).classList.remove('oculto');
 
+  // Mostrar botón "Inicio" cuando no estemos en la pantalla principal
+  const btnInicio = document.getElementById('btn-inicio');
+  btnInicio.style.display = 'inline-block';
+
   // Mostrar el botón "Volver a trabajos" solo en galería o imagen ampliada
   const btnTrabajos = document.getElementById('volver-trabajos');
   if (id === 'trabajos-photoshop' || id === 'imagen-ampliada') {
@@ -14,12 +18,19 @@ function mostrarSeccion(id) {
   }
 }
 
-
 function volverInicio() {
   document.getElementById('pantalla-inicial').style.display = 'block';
   document.querySelectorAll('.seccion').forEach(seccion => {
     seccion.classList.add('oculto');
   });
+
+  // Ocultar botón "Inicio" cuando estemos en la pantalla principal
+  const btnInicio = document.getElementById('btn-inicio');
+  btnInicio.style.display = 'none';
+
+  // Ocultar también el botón "Volver a trabajos"
+  const btnTrabajos = document.getElementById('volver-trabajos');
+  btnTrabajos.style.display = 'none';
 }
 
 function toggleAcordeon(button) {
@@ -43,7 +54,7 @@ function toggleModo() {
   botonModo.textContent = esOscuro ? '☀️' : '🌙';
 }
 
-// Para esto tuve que usar IA porque no estaba seguro como hacerlo y estaba bastante cansado. Espero me perdones profe ☺
+// Para esto tuve que usar IA porque no estaba seguro como hacerlo y estaba bastante cansado, igual al final era fácil. Espero me perdones profe ☺
 window.addEventListener('DOMContentLoaded', () => {
   const modoOscuroGuardado = localStorage.getItem('modoOscuro');
   const esOscuro = modoOscuroGuardado === 'true';
@@ -56,21 +67,33 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // Mostrar/ocultar el panel de colores
-document.getElementById('btn-colores').addEventListener('click', () => {
-  document.getElementById('color-panel').classList.toggle('oculto');
-});
+document.addEventListener('DOMContentLoaded', () => {
+  const btnColores = document.getElementById('btn-colores');
+  const colorPanel = document.getElementById('color-panel');
 
-// Cambiar el color principal al hacer clic en una opción
-document.querySelectorAll('.color-opcion').forEach(circulo => {
-  circulo.addEventListener('click', () => {
-    const color = circulo.getAttribute('data-color');
-    document.documentElement.style.setProperty('--color-principal', color);
-    localStorage.setItem('colorPrincipal', color); // Guardar
+  btnColores.addEventListener('click', (e) => {
+    e.stopPropagation(); // Evita que el clic se propague al documento
+    colorPanel.classList.toggle('oculto');
   });
-});
 
-// Aplicar color guardado al cargar la página
-window.addEventListener('DOMContentLoaded', () => {
+  // Cerrar el panel cuando se hace clic fuera de él
+  document.addEventListener('click', (e) => {
+    if (!colorPanel.contains(e.target) && !btnColores.contains(e.target)) {
+      colorPanel.classList.add('oculto');
+    }
+  });
+
+  // Cambiar el color principal al hacer clic en una opción
+  document.querySelectorAll('.color-opcion').forEach(circulo => {
+    circulo.addEventListener('click', (e) => {
+      e.stopPropagation(); // Evita que se cierre el panel inmediatamente
+      const color = circulo.getAttribute('data-color');
+      document.documentElement.style.setProperty('--color-principal', color);
+      localStorage.setItem('colorPrincipal', color); // Guardar
+    });
+  });
+
+  // Aplicar color guardado al cargar la página
   const colorGuardado = localStorage.getItem('colorPrincipal');
   if (colorGuardado) {
     document.documentElement.style.setProperty('--color-principal', colorGuardado);

@@ -1,9 +1,12 @@
+<!-- Nombre de clases y algunas cosas especificas que estan mencionadas en el codigo fueron hechos con uso de IA -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Mi Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -20,9 +23,8 @@
       </div>
     </div>
     <nav>
-      <button onclick="volverInicio()">Inicio</button>
+      <button id="btn-inicio" onclick="volverInicio()">Inicio</button>
       <button id="volver-trabajos" onclick="mostrarSeccion('trabajos')">Volver a trabajos</button>
-
       <button onclick="toggleModo()">🌙</button>
     </nav>
   </header>
@@ -66,14 +68,13 @@
     <ul>
       <li>
         <p>Se trata de un videojuego desarrollado en python que simula el tradicional space invaders</p>
-        <a href="https://github.com/Laschera/TP1_SpaceInvaders" target="_blank">
-          <img src="img/space_invaders.png" alt="Space Invaders" style="width: 200px; border-radius: 10px;">
+        <a href="https://github.com/Laschera/TP1_SpaceInvaders" target="_blank">Space Invaders
         </a>
       </li>
 
       <li>
         <p>Trabajos hechos con Photoshop</p>
-        <a href="#" class="boton" onclick="mostrarSeccion('trabajos-photoshop')">Ver galería</a>
+        <a href="#" onclick="mostrarSeccion('trabajos-photoshop')">Ver galería</a>
       </li>
     </ul>
   </section>
