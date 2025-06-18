@@ -99,3 +99,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.style.setProperty('--color-principal', colorGuardado);
   }
 });
+
+// Función para descargar el CV como PDF (IA)
+document.getElementById('btn-descargar-pdf').addEventListener('click', () => {
+  const cv = document.getElementById('cv');
+
+  const opciones = {
+    margin:       0.3,
+    filename:     'mi_cv.pdf',
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { scale: 2 },
+    jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+  };
+
+  html2pdf().set(opciones).from(cv).save();
+});

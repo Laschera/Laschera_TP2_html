@@ -35,6 +35,7 @@
     <div class="menu-vertical">
       <a href="#" onclick="mostrarSeccion('sobre-mi')">Sobre mí</a>
       <a href="#" onclick="mostrarSeccion('trabajos')">Trabajos</a>
+      <a href="#" onclick="mostrarSeccion('cv')">CV</a>
       <a href="#" onclick="mostrarSeccion('contacto')">Contacto</a>
     </div>
   </div>
@@ -97,6 +98,106 @@
     <a href="#" class="inicio" onclick="mostrarSeccion('trabajos-photoshop')">Volver a galería</a>
   </section>
 
+  <!-- Sección: CV -->
+  <section id="cv" class="seccion oculto">
+    <div class="cv-header">
+      <h2>Curriculum Vitae</h2>
+      <button id="btn-descargar-pdf" class="boton-pdf" onclick="descargarCV()">📄 Descargar como PDF</button>
+    </div>
+    
+    <div id="cv-contenido" class="cv-contenido">
+      <div class="cv-titulo">
+        <h1>Facundo Laschera</h1>
+        <div class="cv-subtitulo">
+          Desarrollador Junior | Estudiante de Tecnología | Apasionado por el GameDev y las Redes
+        </div>
+        <div class="cv-contacto">
+          📍 Buenos Aires, Argentina<br>
+          📧 fdlaschera@gmail.com | 🌐 www.facundodev.com.ar | 📱 +54 9 11 6115 4210
+        </div>
+      </div>
+
+      <div class="cv-seccion">
+        <h3>Sobre mí</h3>
+        <p>Soy un estudiante técnico con enfoque en informática, desarrollo de software y redes. Apasionado por la creación de videojuegos en Python (Pygame), el diseño de interfaces interactivas, y la implementación de soluciones tecnológicas. Me caracterizo por ser curioso, autodidacta y con muchas ganas de crecer en el mundo IT.</p>
+      </div>
+
+      <div class="cv-seccion">
+        <h3>Educación</h3>
+        <div class="cv-item">
+          <h4>Escuela Técnica Fernando Fader - Instituto Huergo</h4>
+          <div class="cv-cargo">Técnico en Informática Profesional y Personal</div>
+          <div class="cv-fecha">📅 2021 - Actualidad</div>
+          <ul>
+            <li>Formación técnica en programación, redes, sistemas operativos y hardware.</li>
+            <li>Proyecto destacado: Desarrollo de videojuego completo en Python con música, animaciones y múltiples modos de juego.</li>
+            <li>Participación activa en trabajos en grupo, presentaciones orales y eventos escolares.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-seccion">
+        <h3>Experiencia Técnica</h3>
+        
+        <div class="cv-item">
+          <h4>Desarrollador Indie de Videojuegos (Proyecto personal)</h4>
+          <div class="cv-fecha">📅 2023 - 2024</div>
+          <ul>
+            <li>Desarrollo completo de un clon mejorado de Space Invaders en Python (Pygame).</li>
+            <li>Implementación de menú interactivo, niveles, sonidos, animaciones, sistema de vidas y modo infinito.</li>
+            <li>Organización modular del código y uso de clases personalizadas.</li>
+          </ul>
+        </div>
+
+        <div class="cv-item">
+          <h4>Estudiante Avanzado – Cisco Networking Academy</h4>
+          <div class="cv-fecha">📅 2024</div>
+          <ul>
+            <li>Curso IT Essentials v7 (Cisco) aprobado.</li>
+            <li>Conocimientos de hardware, tipos de fuentes ATX/ITS, RAID, UEFI, RAM, SSD y protocolos de red.</li>
+            <li>Simulaciones prácticas con herramientas como Packet Tracer.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-seccion">
+        <h3>Habilidades Técnicas</h3>
+        <ul>
+          <li>🖥️ <strong>Lenguajes</strong>: Python, HTML, CSS, JavaScript básico</li>
+          <li>🕹️ <strong>GameDev</strong>: Pygame, lógica de juegos, animaciones, sonidos</li>
+          <li>🧠 <strong>Sistemas</strong>: Windows, Linux básico, instalación de sistemas</li>
+          <li>🌐 <strong>Redes</strong>: TCP/IP, cableado, configuración básica de routers/switches</li>
+          <li>🧰 <strong>Herramientas</strong>: Visual Studio Code, GitHub, Canva, Packet Tracer</li>
+        </ul>
+      </div>
+
+      <div class="cv-seccion">
+        <h3>Proyectos Destacados</h3>
+        <div class="cv-proyecto">
+          <h4>🎮 Space Invaders Reloaded</h4>
+          <p>Juego arcade retro con mejoras modernas: animaciones de explosión, sistema multijugador, música por niveles, modo infinito y menú de configuración.</p>
+        </div>
+        <div class="cv-proyecto">
+          <h4>🌐 Portfolio Web (En desarrollo)</h4>
+          <p>Sitio personal para mostrar proyectos, blog técnico y contacto profesional. Diseño responsivo y limpio.</p>
+        </div>
+      </div>
+
+      <div class="cv-seccion">
+        <h3>Idiomas</h3>
+        <ul>
+          <li>Español: Nativo</li>
+          <li>Inglés: First rendido y curso internacional en Londres (en proceso de mejora de Inglés técnico)</li>
+        </ul>
+      </div>
+
+      <div class="cv-seccion">
+        <h3>Intereses</h3>
+        <p>GameDev • Ciberseguridad • Hardware y tecnología • Música arcade retro • Trabajo en equipo</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Sección: Contacto -->
   <section id="contacto" class="seccion oculto">
     <div class="contacto-container">
@@ -130,5 +231,7 @@
 
   <!-- Enlace al JavaScript externo -->
   <script src="script.js"></script>
+  <!-- Para saber como hacer que el boton descargue el pdf tuve que usar IA -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> 
 </body>
 </html>
